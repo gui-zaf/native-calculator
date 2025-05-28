@@ -15,7 +15,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { lightTheme, darkTheme } from "./theme";
-import Slider from "@react-native-community/slider";
+import { Slider } from 'react-native-elements';
 
 const MIN_DISPLAY_FONT_SIZE = 16;
 const MAX_DISPLAY_FONT_SIZE = 80;
@@ -302,11 +302,19 @@ const CalculatorScreen = ({
             minimumValue={MIN_FONT_SIZE}
             maximumValue={MAX_FONT_SIZE}
             value={fontSize}
-            onValueChange={setFontSize}
+            onValueChange={(value: number) => setFontSize(value)}
             step={1}
-            minimumTrackTintColor={theme.orangeButton}
-            maximumTrackTintColor={theme.grayButton}
+            thumbStyle={{ 
+              width: 28,
+              height: 28
+            }}
             thumbTintColor={theme.icon}
+            minimumTrackTintColor={theme.orangeButton}
+            maximumTrackTintColor={themeMode === "dark" ? "#303031" : theme.grayButton}
+            trackStyle={{
+              marginTop: -4,
+              height: 4
+            }}
           />
         </View>
       </Animated.View>
