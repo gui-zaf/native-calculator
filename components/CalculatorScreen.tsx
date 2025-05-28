@@ -318,7 +318,12 @@ const CalculatorScreen = ({
       <SafeAreaView
         style={[styles.container, { backgroundColor: "transparent" }]}
       >
-        <View style={{ flex: 1, flexDirection: "column" }}>
+        <View style={[styles.titleContainer]}>
+          <Text style={[styles.headerTitle, { color: theme.displayText, fontSize: fontSize * 0.95 }]}>
+            Calculadora
+          </Text>
+        </View>
+        <View style={{ flex: 1, flexDirection: "column", marginTop: 50 }}>
           <View style={styles.headerWrapper}>
             <View style={styles.header}>
               <View style={styles.displayContainer}>
@@ -536,7 +541,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#000",
     flexDirection: "column",
     paddingHorizontal: 0,
-    marginBottom: -30,
+    marginBottom: -20,
   },
   menuButtonAbsolute: {
     position: "absolute",
@@ -551,7 +556,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     paddingHorizontal: 16,
-    paddingTop: 48,
+    paddingTop: 0,
   },
   displayContainer: {
     flex: 1,
@@ -611,6 +616,20 @@ const styles = StyleSheet.create({
   },
   headerWrapper: {
     marginBottom: 32,
+  },
+  headerTitle: {
+    fontWeight: "bold",
+    paddingHorizontal: 16,
+  },
+  titleContainer: {
+    width: '100%',
+    paddingTop: 0,
+    paddingVertical: 10,
+    position: "absolute",
+    top: 16,
+    left: 0,
+    right: 0,
+    zIndex: 10,
   },
 });
 
